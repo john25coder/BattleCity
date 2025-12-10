@@ -12,8 +12,8 @@ public class Tank {
     //private int kill = 0;
 
     //Movimento
-    private int row = 13;
-    private int col = 6;
+    private int row = 0;
+    private int col = 0;
     private Direction direction;
 
 
@@ -29,6 +29,7 @@ public class Tank {
     }
 
     public void moveUP(){
+
         row--;
     }
 
@@ -46,7 +47,7 @@ public class Tank {
 
     //Sistema de XP
     public void gainXP(int amount) {
-        this.xp += amount;
+        this.xp -= amount;
 
         if (this.xp == xpUP) {
             levelUP();
@@ -118,5 +119,19 @@ public class Tank {
     public void setXp(int xp) {
         this.xp = xp;
     }
+    public Direction getDirection() {
+        return direction;
+    }
+
+    // Tank.java
+
+    public int getRow() { // Remove o parâmetro 'int row'
+        return this.row;
+    }
+
+    public int getCol() { // Remove o parâmetro 'int col'
+        return this.col;
+    }
+
 
 }
